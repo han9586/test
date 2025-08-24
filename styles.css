@@ -1,0 +1,408 @@
+/* 전체 페이지 스타일 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px;
+}
+
+.form-container {
+    background: white;
+    border-radius: 12px;
+    padding: 45px 50px;
+    max-width: 650px;
+    width: 100%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* 헤더 섹션 */
+.header h1 {
+    color: #2563eb;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.instructions {
+    margin-bottom: 35px;
+}
+
+.instructions p {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+/* 이미지 업로드 섹션 */
+.upload-section {
+    margin-bottom: 30px;
+}
+
+.upload-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.upload-btn {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 15px 25px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: #495057;
+    transition: all 0.2s ease;
+    min-width: 200px;
+}
+
+.upload-btn:hover {
+    background: #e9ecef;
+    border-color: #adb5bd;
+}
+
+.upload-icon {
+    font-size: 16px;
+}
+
+.file-size-limit {
+    color: #666;
+    font-size: 13px;
+    white-space: nowrap;
+    margin-left: 10px;
+}
+
+.selected-file {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 13px;
+    color: #495057;
+}
+
+/* 카테고리 선택 섹션 */
+.category-section {
+    margin-bottom: 30px;
+}
+
+.category-btn {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 15px 25px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #495057;
+    transition: all 0.2s ease;
+    min-width: 200px;
+}
+
+.category-btn:hover {
+    background: #e9ecef;
+    border-color: #adb5bd;
+}
+
+.selected-category {
+    background: #e3f2fd;
+    border: 1px solid #2196f3;
+    border-radius: 6px;
+    padding: 10px 15px;
+    margin-top: 12px;
+    font-size: 13px;
+    color: #1976d2;
+    display: inline-block;
+}
+
+/* 제보자 정보 섹션 */
+.reporter-section {
+    margin-bottom: 35px;
+}
+
+.reporter-instructions {
+    margin-bottom: 25px;
+}
+
+.reporter-instructions p {
+    color: #666;
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+.nickname-row {
+    display: flex;
+    align-items: flex-end;
+    gap: 25px;
+}
+
+.nickname-input-group {
+    flex: 1;
+}
+
+.nickname-input-group label {
+    display: block;
+    font-size: 13px;
+    color: #495057;
+    margin-bottom: 10px;
+}
+
+.nickname-input-group input {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #dee2e6;
+    padding: 10px 0;
+    font-size: 14px;
+    background: transparent;
+    transition: border-color 0.2s ease;
+}
+
+.nickname-input-group input:focus {
+    outline: none;
+    border-bottom-color: #2563eb;
+}
+
+.anonymous-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    white-space: nowrap;
+    margin-bottom: 5px;
+}
+
+.anonymous-checkbox input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: #2563eb;
+}
+
+.anonymous-checkbox label {
+    font-size: 13px;
+    color: #495057;
+}
+
+/* 제출 버튼 */
+.submit-section {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.submit-btn {
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 18px 50px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    min-width: 180px;
+}
+
+.submit-btn:hover {
+    background: #1d4ed8;
+}
+
+.submit-btn:active {
+    transform: translateY(1px);
+}
+
+/* 모달 스타일 */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 8% auto;
+    padding: 0;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 520px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+    animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 30px;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.modal-header h3 {
+    color: #333;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+}
+
+.close-btn:hover {
+    background: #f8f9fa;
+    color: #333;
+}
+
+.modal-body {
+    padding: 30px;
+}
+
+.category-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 15px;
+}
+
+.category-option {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 14px 18px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #495057;
+    transition: all 0.2s ease;
+    text-align: center;
+    font-weight: 500;
+}
+
+.category-option:hover {
+    background: #e9ecef;
+    border-color: #adb5bd;
+}
+
+.category-option.selected {
+    background: #2563eb;
+    color: white;
+    border-color: #2563eb;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .form-container {
+        padding: 30px 25px;
+        margin: 15px;
+        max-width: 95%;
+    }
+    
+    .header h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    
+    .instructions {
+        margin-bottom: 25px;
+    }
+    
+    .upload-section,
+    .category-section,
+    .reporter-section {
+        margin-bottom: 25px;
+    }
+    
+    .nickname-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+    
+    .upload-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .upload-btn,
+    .category-btn {
+        min-width: 100%;
+        justify-content: center;
+    }
+    
+    .submit-btn {
+        min-width: 100%;
+        padding: 16px 40px;
+    }
+    
+    .modal-content {
+        margin: 15% auto;
+        width: 95%;
+    }
+    
+    .category-options {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-container {
+        padding: 25px 20px;
+    }
+    
+    .header h1 {
+        font-size: 22px;
+    }
+    
+    .upload-btn,
+    .category-btn {
+        padding: 12px 20px;
+    }
+    
+    .submit-btn {
+        padding: 15px 30px;
+    }
+}

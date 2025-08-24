@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>골목의 경고문</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <!-- 헤더 섹션 -->
+            <div class="header">
+                <h1>골목의 다양한 경고문을 기다립니다.</h1>
+                <div class="instructions">
+                    <p>여러분들이 보고 찍은 경고문을 보내주세요.</p>
+                    <p>순차적으로 확인 후 부착하겠습니다.</p>
+                    <p>중복된 경고문은 부착되지 않으니 미리 검색해서 확인해 주세요.</p>
+                </div>
+            </div>
+
+            <!-- 이미지 업로드 섹션 -->
+            <div class="upload-section">
+                <div class="upload-row">
+                    <button class="upload-btn" id="uploadBtn">
+                        <span class="upload-icon">🤮</span>
+                        경고문 이미지 업로드
+                    </button>
+                    <span class="file-size-limit">최대 10MB</span>
+                </div>
+                <input type="file" id="fileInput" accept="image/*" style="display: none;">
+                <div class="selected-file" id="selectedFile" style="display: none;"></div>
+            </div>
+
+            <!-- 카테고리 선택 섹션 -->
+            <div class="category-section">
+                <button class="category-btn" id="categoryBtn">
+                    카테고리 선택
+                </button>
+                <div class="selected-category" id="selectedCategory" style="display: none;"></div>
+            </div>
+
+            <!-- 제보자 정보 섹션 -->
+            <div class="reporter-section">
+                <div class="reporter-instructions">
+                    <p>제보받은 경고문일 경우 제보자의 닉네임을 함께 적고 있어요.</p>
+                    <p>원치 않으시면 익명 제보를 선택해 주세요.</p>
+                </div>
+                <div class="nickname-row">
+                    <div class="nickname-input-group">
+                        <label for="nickname">닉네임 입력</label>
+                        <input type="text" id="nickname" placeholder="닉네임을 입력하세요">
+                    </div>
+                    <div class="anonymous-checkbox">
+                        <input type="checkbox" id="anonymousCheck">
+                        <label for="anonymousCheck">익명 제보</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 제출 버튼 -->
+            <div class="submit-section">
+                <button class="submit-btn" id="submitBtn">제보하기</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 카테고리 선택 모달 -->
+    <div class="modal" id="categoryModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>카테고리 선택</h3>
+                <button class="close-btn" id="closeModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="category-options">
+                    <button class="category-option" data-category="교통안전">교통안전</button>
+                    <button class="category-option" data-category="건설공사">건설공사</button>
+                    <button class="category-option" data-category="환경보호">환경보호</button>
+                    <button class="category-option" data-category="보안경고">보안경고</button>
+                    <button class="category-option" data-category="기타">기타</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
